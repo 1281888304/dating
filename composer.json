@@ -1,0 +1,13 @@
+{
+  "name": "rbarbante/328/dating",
+  "authors": [
+    {
+      "name": "Qinghang Zhang",
+      "email": "Qzhang9@mail.greenriver.edu"
+
+    }
+  ],
+  "require": {
+    "bcosca/fatfree-core": "dev-master"
+  }
+}
