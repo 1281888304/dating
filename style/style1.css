@@ -8,3 +8,10 @@
 #T2{
     text-indent: 50px;
 }
+#rule{
+     float: right;
+ }
+#left{
+    float:left;
+}
+#right{float:right;}
