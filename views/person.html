@@ -2,9 +2,96 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Person Information</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="style/style1.css">
+
 </head>
 <body>
+<nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand" href="{{ @BASE }}">My Dating Website</a>
+</nav>
+<div class="container">
+    <h1>Personal Information</h1>
+    <hr>
 
+    <form action="#" method="post" class="form-horizontal">
+
+        <!-- get food -->
+        <div class="form-group">
+            <label for="firstName" class="col-sm-2 control-label">FirstName</label>
+
+            <div class="col-sm-4">
+                <input class="form-control" type="text" name="firstName" id="firstName">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="lastName" class="col-sm-2 control-label">LastName</label>
+
+            <div class="col-sm-4">
+                <input class="form-control" type="text" name="lastName" id="lastName">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="age" class="col-sm-2 control-label">Age</label>
+
+            <div class="col-sm-4">
+                <input class="form-control" type="text" name="age" id="age">
+            </div>
+        </div>
+        <!-- get meal -->
+        <div class="form-group">
+            <label class="col-sm-2 control-label">Gender</label>
+            <div class="col-sm-4">
+                <repeat group="{{ @genders }}" value="{{ @gender }}">
+                    <label><input type="radio"
+                                  name="gender"
+                                  id="{{ @gender }}"
+                                  value="{{ @gender }}"> {{ ucfirst(@gender) }}
+                        </input></label><br>
+                </repeat>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="phone" class="col-sm-2 control-label">phone Number</label>
+
+            <div class="col-sm-4">
+                <input class="form-control" type="text" name="phone" id="phone">
+            </div>
+        </div>
+
+        <div id="rule" class="col-lg-4">
+            <div class="card mt-4">
+                <div class="card-body">
+                    <p class="card-text"><b>Note:</b> All information entered is protected by our <a
+                            href="https://en.wikipedia.org/wiki/Privacy_policy" target="_blank">privacy policy</a>.
+                        Profile information can only be viewed by others with your permission.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xs-3 ">
+            <button type="submit" class="btn btn-primary float-right">Profile</button>
+        </div>
+
+
+    </form>
+</div>
+
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
 </body>
 </html>

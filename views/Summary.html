@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Summary</title>
+    <include href="includes/header.htm"></include>
+</head>
+<body>
+<nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand" href="{{ @BASE }}">My Dating Website</a>
+</nav>
+<div class="container">
+    <h1>Summary</h1>
+    <hr>
+    <!--    <p>aaa{{@SESSION.firstName}}{{@SESSION.lastName}}</p>-->
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-header">
+                    Person Summary
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Name: {{@SESSION.firstName}} {{@SESSION.lastName}}</li>
+                    <li class="list-group-item">Gender: {{@SESSION.gender}}</li>
+                    <li class="list-group-item">Age: {{@SESSION.age}}</li>
+                    <li class="list-group-item">Phone: {{@SESSION.phone}}</li>
+                    <li class="list-group-item">Email: {{@SESSION.email}}</li>
+                    <li class="list-group-item">State: {{@SESSION.state}}</li>
+                    <li class="list-group-item">Seeking: {{@SESSION.seek}}</li>
+                    <li class="list-group-item">Interest: {{@SESSION.indoor}} {{@SESSION.outdoor}}</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="col-lg-6">
+            <img src="image/p2.jpg">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Bio</h5>
+
+                    <p class="card-text">{{@SESSION.bio}}</p>
+
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <div>
+        <button type="submit" class="btn btn-primary float-right">Contract Me</button>
+    </div>
+
+
+</div>
+</body>
+</html>
