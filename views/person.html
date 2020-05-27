@@ -17,71 +17,99 @@
     <hr>
 
     <form action="#" method="post" class="form-horizontal">
+        <div class="row">
+            <div class="col-lg-6">
 
-        <!-- get food -->
-        <div class="form-group">
-            <label for="firstName" class="col-sm-2 control-label">FirstName</label>
+                <!-- get food -->
+                <div class="form-group">
+                    <label for="firstName" class="col-sm-2 control-label">FirstName</label>
 
-            <div class="col-sm-4">
-                <input class="form-control" type="text" name="firstName" id="firstName">
-            </div>
-        </div>
+                    <div class="col-sm-4">
+                        <input class="form-control" type="text" name="firstName" id="firstName"
+                               value="{{@firstName}}">
+                    </div>
+                    <span class="err">
+                        <check if="{{ isset(@errors['firstName']) }}">
+                            {{ @errors['firstName'] }}
+                        </check>
+                    </span>
+                </div>
 
-        <div class="form-group">
-            <label for="lastName" class="col-sm-2 control-label">LastName</label>
+                <div class="form-group">
+                    <label for="lastName" class="col-sm-2 control-label">LastName</label>
 
-            <div class="col-sm-4">
-                <input class="form-control" type="text" name="lastName" id="lastName">
-            </div>
-        </div>
+                    <div class="col-sm-4">
+                        <input class="form-control" type="text" name="lastName" id="lastName"
+                               value="{{@lastName}}">
+                    </div>
+                    <span class="err">
+                        <check if="{{ isset(@errors['lastName']) }}">
+                            {{ @errors['lastName'] }}
+                        </check>
+                    </span>
+                </div>
 
-        <div class="form-group">
-            <label for="age" class="col-sm-2 control-label">Age</label>
+                <div class="form-group">
+                    <label for="age" class="col-sm-2 control-label">Age</label>
 
-            <div class="col-sm-4">
-                <input class="form-control" type="text" name="age" id="age">
-            </div>
-        </div>
-        <!-- get meal -->
-        <div class="form-group">
-            <label class="col-sm-2 control-label">Gender</label>
-            <div class="col-sm-4">
-                <repeat group="{{ @genders }}" value="{{ @gender }}">
-                    <label><input type="radio"
-                                  name="gender"
-                                  id="{{ @gender }}"
-                                  value="{{ @gender }}"> {{ ucfirst(@gender) }}
-                        </input></label><br>
-                </repeat>
-            </div>
-        </div>
+                    <div class="col-sm-4">
+                        <input class="form-control" type="text" name="age" id="age"
+                               value="{{@age}}">
+                    </div>
+                    <span class="err">
+                        <check if="{{ isset(@errors['age']) }}">
+                            {{ @errors['age'] }}
+                        </check>
+                    </span>
+                </div>
+                <!-- get meal -->
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Gender</label>
+                    <div class="col-sm-4">
+                        <repeat group="{{ @genders }}" value="{{ @gender }}">
+                            <label><input type="radio"
+                                          name="gender"
+                                          id="{{ @gender }}"
+                                          value="{{ @gender }}"> {{ ucfirst(@gender) }}
+                            </label><br>
+                        </repeat>
+                    </div>
+                </div>
 
-        <div class="form-group">
-            <label for="phone" class="col-sm-2 control-label">phone Number</label>
+                <div class="form-group">
+                    <label for="phone" class="col-sm-2 control-label">phone Number</label>
 
-            <div class="col-sm-4">
-                <input class="form-control" type="text" name="phone" id="phone">
-            </div>
-        </div>
-
-        <div id="rule" class="col-lg-4">
-            <div class="card mt-4">
-                <div class="card-body">
-                    <p class="card-text"><b>Note:</b> All information entered is protected by our <a
-                            href="https://en.wikipedia.org/wiki/Privacy_policy" target="_blank">privacy policy</a>.
-                        Profile information can only be viewed by others with your permission.</p>
+                    <div class="col-sm-4">
+                        <input class="form-control" type="text" name="phone" id="phone"
+                               value="{{@phone}}">
+                    </div>
+                    <span class="err">
+                        <check if="{{ isset(@errors['phone']) }}">
+                            {{ @errors['phone'] }}
+                        </check>
+                    </span>
                 </div>
             </div>
-        </div>
+            <div class="col-lg-6">
+                <div id="rule" class="col-lg-4">
+                    <div class="card mt-4">
+                        <div class="card-body">
+                            <p class="card-text"><b>Note:</b> All information entered is protected by our <a
+                                    href="https://en.wikipedia.org/wiki/Privacy_policy" target="_blank">privacy
+                                policy</a>.
+                                Profile information can only be viewed by others with your permission.</p>
+                        </div>
+                    </div>
+                </div>
 
+
+            </div>
+        </div>
         <div class="col-xs-3 ">
             <button type="submit" class="btn btn-primary float-right">Profile</button>
         </div>
-
-
     </form>
 </div>
-
 
 
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"

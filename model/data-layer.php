@@ -7,7 +7,7 @@ function getGender()
 
 function getIndoor(){
     $indoor=array("tv","movies","cooking",
-        "board game", "puzzles","readying","playing card","video game");
+        "boardgame", "puzzles","readying","playingCard","videoGame");
     return $indoor;
 }
 
