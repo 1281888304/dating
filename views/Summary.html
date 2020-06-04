@@ -11,10 +11,11 @@
 </nav>
 <div class="container">
     <h1>Summary</h1>
-    <p>Test area</p>
-
+<!--    <p>Text area</p>-->
+<!--    <p>Pre value: {{@SESSION.pre}}</p>-->
     <hr>
-    <!--    <p>aaa{{@SESSION.firstName}}{{@SESSION.lastName}}</p>-->
+<!--    <p>Text area</p>-->
+<!--    <p>Pre value: {{@SESSION.pre}}</p>-->
     <div class="row">
         <div class="col-lg-6">
             <div class="card">
@@ -22,14 +23,23 @@
                     Person Summary
                 </div>
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Name: {{@SESSION.firstName}} {{@SESSION.lastName}}</li>
-                    <li class="list-group-item">Gender: {{@SESSION.gender}}</li>
-                    <li class="list-group-item">Age: {{@SESSION.age}}</li>
-                    <li class="list-group-item">Phone: {{@SESSION.phone}}</li>
-                    <li class="list-group-item">Email: {{@SESSION.email}}</li>
-                    <li class="list-group-item">State: {{@SESSION.state}}</li>
-                    <li class="list-group-item">Seeking: {{@SESSION.seek}}</li>
-                    <li class="list-group-item">Interest: {{ implode(@SESSION.indoor, ", ") }} {{implode(@SESSION.outdoor,", ")}}</li>
+                    <li class="list-group-item">Name: {{@SESSION.member->getFirstName()}}
+                        {{@SESSION.member->getLastName()}}
+                    </li>
+                    <li class="list-group-item">Gender: {{@SESSION.member->getGender()}}</li>
+                    <li class="list-group-item">Age: {{@SESSION.member->getAge()}}</li>
+                    <li class="list-group-item">Phone: {{@SESSION.member->getPhone()}}</li>
+                    <li class="list-group-item">Email: {{@SESSION.member->getEmail()}}</li>
+                    <li class="list-group-item">State: {{@SESSION.member->getState()}}</li>
+                    <li class="list-group-item">Seeking: {{@SESSION.member->getSeeking()}}</li>
+                    <check if="{{ isset(@SESSION.premium) }}">
+                        <li class="list-group-item">
+                            Interest:
+                            {{ implode(@SESSION.premium->getIndoor(), ", ") }}
+                            {{ implode(@SESSION.premium->getOutdoor(), ", ") }}
+
+                        </li>
+                    </check>
                 </ul>
             </div>
         </div>
@@ -40,7 +50,7 @@
                 <div class="card-body">
                     <h5 class="card-title">Bio</h5>
 
-                    <p class="card-text">{{@SESSION.bio}}</p>
+                    <p class="card-text">{{@SESSION.member->getBio()}}</p>
 
                 </div>
             </div>
